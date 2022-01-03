@@ -1,0 +1,16 @@
+{
+    "patient":[
+        {
+            "name":"Jhon",
+            "email":"jhonsmith@gmail.com",
+            "age":25,
+            "gender":"male"
+        },
+        {
+            "name":"Derak",
+            "email":"derak11@gmail.com",
+            "age":20,
+            "gender":"male"
+        }
+    ]
+}

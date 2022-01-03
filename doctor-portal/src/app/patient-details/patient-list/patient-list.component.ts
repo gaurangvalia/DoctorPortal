@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Patient } from '../patient.model';
+import { PatientService } from '../patient.service';
 
 @Component({
   selector: 'app-patient-list',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientListComponent implements OnInit {
 
-  constructor() { }
+   /** patients list */
+   public patientsList: Patient[];
 
-  ngOnInit(): void {
+  constructor(
+    private patientService:PatientService
+  ) { 
+    
   }
 
+  ngOnInit(): void {
+    // Call the servie and get the date of patient Details
+    
+    this.patientService.getPatientDetails().subscribe((response:Patient[])=>{
+      this.patientsList = response
+    });
+  }
+
+ 
 }
